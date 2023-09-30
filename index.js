@@ -59,4 +59,4 @@ const server = app.listen(PORT, () => {
 })
 
 
-module.export = { app, server };
+module.exports = { app, server }
