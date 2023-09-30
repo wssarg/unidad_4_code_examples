@@ -7,6 +7,22 @@ const mongoose = require("mongoose")
 
 const api = supertest(app);
 
+const Perro = require("../modelo/perro")
+
+beforeEach(async () => {
+    await Perro.deleteMany({});
+
+    const perro1 = new Perro({
+        id: 1,
+        color: "blanco",
+        raza: "cocker",
+        nombre: "pepe"
+    });
+    await perro1.save();
+})
+
+
+
 
 test("Los perros vienen en formato JSON", async () => {
     await api
