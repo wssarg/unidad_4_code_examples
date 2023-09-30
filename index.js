@@ -32,21 +32,20 @@ app.get("/api/perros", async (req, res) => {
 
 // definir el ENDPOINT get
 app.post("/api/perros", async (req, res) => {
-
     const perros = Perro.find();
-
     const id_perro = (await perros).length + 1;
-
     //console.log(id_perro);
 
     const datos_perro = {
         id: id_perro, ...req.body
     }
-
     //console.log(datos_perro);
 
     const perro1 = new Perro(datos_perro);
     await perro1.save()
+
+    // const perro1 = new Perro(req.body);
+    // await perro1.save()
 
     res.status(201).send(JSON.stringify(perro1));
     //res.status(201).send(JSON.stringify({ id: id_perro }));

@@ -6,7 +6,8 @@
   "scripts": {
     "start": "cross-env NODE_ENV=development node index.js",
     "dev": "cross-env NODE_ENV=development index.js",
-    "test": "cross-env NODE_ENV=TEST jest --verbose --silent"
+    "test1": "cross-env NODE_ENV=TEST jest --verbose --silent",
+    "test": "cross-env NODE_ENV=TEST jest --verbose"
   },
   "keywords": [],
   "author": "",
