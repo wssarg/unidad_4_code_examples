@@ -92,7 +92,6 @@ describe("Pruebas de cambios", () => {
         }).expect(200);
 
         const perros = await api.get("/api/perros/2");
-        console.log(perros.body[0]);
         expect(perros.body[0].nombre).toBe("Santiago")
     })
 
